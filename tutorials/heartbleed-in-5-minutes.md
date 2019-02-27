@@ -16,7 +16,5 @@ First, clone the tutorial code to your machine:
 git clone https://github.com/fuzzbuzz/heartbleed-tutorial.git
 ```
 
-## Step 2: Code Review
-
-This is an example of a more complex fuzzing setup - rather than just a couple of files and a simple harness, 
+## 
 
