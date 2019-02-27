@@ -30,7 +30,7 @@ curl -O https://app.fuzzbuzz.io/releases/cli/0.0.1/osx/fuzzbuzz
 Use the following command to download the CLI, and then give it the right permissions and save it somewhere in your path.
 
 ```bash
-wget https://app.fuzzbuzz.io/releases/cli/0.0.1/osx/fuzzbuzz
+wget https://app.fuzzbuzz.io/releases/cli/0.0.1/linux/fuzzbuzz
 ```
 {% endtab %}
 {% endtabs %}
