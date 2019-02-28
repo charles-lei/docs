@@ -29,7 +29,7 @@ It also contains `FuzzerEntrypoint`, the method that Fuzzbuzz will run repeatedl
 {% tab title="Python 2" %}
 ```python
 def BrokenMethod(strInput):
-    if len(strInput) >= 2:
+    if len(strInput) >= 1:
         return strInput[0] == 'F' and strInput[1] == 'U'
 
 def FuzzerEntrypoint(Data):
