@@ -8,7 +8,7 @@ In addition, Fuzzbuzz plays nicely with existing open-source fuzzing tools: if y
 
 ### Simple, flexible test framework
 
-Fuzzbuzz generates the tests, so developers don't have to spend their time dreaming up edge cases. The flexible interface allows developers to write a wide variety of tests that can all take advantage of Fuzzbuzz's platform. Additionally, Fuzzbuzz uses a modified version of the [open-source fuzzer AFL](http://lcamtuf.coredump.cx/afl/)'s algorithm, which has a [proven track record](http://lcamtuf.coredump.cx/afl/#bugs) of funding hundreds of bugs and vulnerabilities.
+Fuzzbuzz generates the tests, so developers don't have to spend their time dreaming up edge cases. The flexible interface allows developers to write a wide variety of tests that can all take advantage of Fuzzbuzz's platform. Additionally, Fuzzbuzz uses a modified version of the [open-source fuzzer AFL](http://lcamtuf.coredump.cx/afl/)'s algorithm, which has a [proven track record](http://lcamtuf.coredump.cx/afl/#bugs) of finding hundreds of bugs and vulnerabilities.
 
 [Click Here](../developer-documentation/targets.md) to learn how Fuzzbuzz's API makes it simple to write robust, flexible automated tests.
 
