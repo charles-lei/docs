@@ -11,3 +11,5 @@ description: >-
 
 {% page-ref page="find-your-first-bug-in-go/" %}
 
+{% page-ref page="find-your-first-bug-in-python/" %}
+
