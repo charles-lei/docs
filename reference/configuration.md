@@ -420,6 +420,8 @@ Sanitizers to use with this target. Sanitizers are analyzers that are compiled a
 Supported sanitizers:
 
 * [Address Sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer): finds bugs including Use After Free, Buffer Over/Underflows, Use After Returns, Memory Leaks, etc
+  * Fuzzbuzz sets the following defaults for ASAN\_OPTIONS \(these will override your settings\): `abort_on_error=1:print_scariness=1`
+  * `symbolize=0` is set during runtime, and `symbolize=1` is set when reproducing crashes to gather stacktraces
 
 #### Usage:
 
