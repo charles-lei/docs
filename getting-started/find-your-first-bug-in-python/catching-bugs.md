@@ -20,7 +20,7 @@ fuzzbuzz validate
 You should see that Fuzzbuzz reads the fuzz.yaml and detects the one target we have, called "tutorial". To make sure that all of the setup steps work, we can run:
 
 ```text
-fuzzbuzz target build tutorial
+fuzzbuzz target build tutorial-python3    
 ```
 
 This will run the target's setup steps in a local Docker container, using the same environment it would on the Fuzzbuzz platform, so you can make sure everything's set up right. Finally, you can run:
