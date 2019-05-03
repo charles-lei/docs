@@ -5,13 +5,13 @@
 {% tabs %}
 {% tab title="macOS" %}
 ```text
-curl -o https://app.fuzzbuzz.io/releases/latest/osx/fuzzbuzz
+curl -o https://app.fuzzbuzz.io/releases/cli/latest/osx/fuzzbuzz
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
 ```text
-wget https://app.fuzzbuzz.io/releases/latest/linux/fuzzbuzz
+wget https://app.fuzzbuzz.io/releases/cli/latest/linux/fuzzbuzz
 ```
 {% endtab %}
 {% endtabs %}
