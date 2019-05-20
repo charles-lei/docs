@@ -80,7 +80,7 @@ Use panics to alert on bugs - Fuzzbuzz will pick up these failures.
 To fuzz code written in Python, include the following method in your package:
 
 {% code-tabs %}
-{% code-tabs-item title="target.go" %}
+{% code-tabs-item title="target.py" %}
 ```python
 def FuzzerEntrypoint(Data): # Data is a buffer of bytes
   # Step 1: read Data into desired format
