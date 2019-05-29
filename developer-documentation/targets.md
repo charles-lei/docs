@@ -334,7 +334,7 @@ You can specify a memory limit \(in Megabytes\) in your target configuration, an
 # ---- base, global setup, and global environment omitted
 targets:
     # ---- rest of target config omitted
-    memory_limit: 1000 # in megabytes
+    memory_limit: '1000' # in megabytes
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -351,7 +351,7 @@ You can specify a timeout \(in milliseconds\) in your target configuration, and 
 # ---- base, global setup, and global environment omitted
 targets:
     # ---- rest of target config omitted
-    timeout: 500 # in milliseconds
+    timeout: '500' # in milliseconds
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
