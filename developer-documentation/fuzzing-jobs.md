@@ -8,7 +8,7 @@ Once you've configured all of your targets, it's time to start fuzzing for bugs.
 fuzzbuzz validate
 ```
 
-This checks your fuzz.yaml for any errors and shows you all the targets Fuzzbuzz will detect, so you don't need to repeatedly push your code to check for errors. To make sure everything builds properly, you can run your setup steps using:
+This checks your fuzzbuzz.yaml for any errors and shows you all the targets Fuzzbuzz will detect, so you don't need to repeatedly push your code to check for errors. To make sure everything builds properly, you can run your setup steps using:
 
 ```text
 fuzzbuzz target build <your-target-name>
@@ -28,7 +28,7 @@ Once your code has been pushed, head to [https://app.fuzzbuzz.io](https://app.fu
 
 ![The main project view](../.gitbook/assets/screen-shot-2019-02-14-at-1.05.50-pm.png)
 
-The left side of the view tell you the current status of your project. You can use the switch to turn it off, which will stop all currently running fuzzing jobs. If there are any errors with your project, such as problems with your `fuzz.yaml`, they will be displayed here.
+The left side of the view tell you the current status of your project. You can use the switch to turn it off, which will stop all currently running fuzzing jobs. If there are any errors with your project, such as problems with your `fuzzbuzz.yaml`, they will be displayed here.
 
 The right side of the view lists all of the targets on your project, as well as some information about their current fuzzing state. To begin fuzzing a target, simply choose a CPU value and press "Save Changes". This will distribute the target over the number of CPUs you specified, build it, and begin fuzzing it. All future updates to the project will update this target with the new version of the code automatically, so there's no need to reset this number every update - only when you want to change how you distribute your targets over the infrastructure.
 

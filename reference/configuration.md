@@ -1,10 +1,10 @@
 # Configuration
 
-## Target Configuration \(fuzz.yaml\)
+## Target Configuration \(fuzzbuzz.yaml\)
 
-Every repository needs a `fuzz.yaml`, which tells Fuzzbuzz how to set up and configure your fuzz targets.
+Every repository needs a `fuzzbuzz.yaml`, which tells Fuzzbuzz how to set up and configure your fuzz targets.
 
-The following sections describe each field allowed in a `fuzz.yaml` configuration file and how to use them.
+The following sections describe each field allowed in a `fuzzbuzz.yaml` configuration file and how to use them.
 
 ### base
 
@@ -19,7 +19,7 @@ The name of the operating system to use as the base of the Docker image the targ
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 base: ubuntu:16.04
 ```
@@ -37,7 +37,7 @@ Environment variables that will be accessible to each target.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 environment:
     - ENV_VAR=value
@@ -57,7 +57,7 @@ A list of commands to run prior to each target's specific setup commands.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 setup:
     - sudo apt-get update
@@ -79,7 +79,7 @@ The name of the language the target was written in. This must be specified eithe
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 language: c++
 ```
@@ -97,7 +97,7 @@ The version of the target's language to use. This must be specified either here,
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 language: go
 version: "1.11"
@@ -116,7 +116,7 @@ Specifies where in the Gopath to place your code. This must be specified either 
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # checkout specifies where to check your code out
 # this repository will be placed in the directory:
@@ -137,7 +137,7 @@ An array of target configurations.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: target-name
@@ -152,12 +152,12 @@ targets:
 
 **Required: yes**
 
-The name of the target. Must be unique within the `fuzz.yaml`. Can only contain letters, numbers, dashes and underscores.
+The name of the target. Must be unique within the `fuzzbuzz.yaml`. Can only contain letters, numbers, dashes and underscores.
 
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -178,7 +178,7 @@ The name of the language the target was written in.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -198,7 +198,7 @@ The version of the target's language to use.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -219,7 +219,7 @@ Environment variables that will be accessible to this specific target.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -241,7 +241,7 @@ A list of commands to run that set up or compile the target.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -263,7 +263,7 @@ The location of the target's test corpus. This should point to a directory of fi
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -287,7 +287,7 @@ Harness specifies the location of the final compiled binary.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -304,7 +304,7 @@ Harness specifies the location of the final compiled binary.
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -346,7 +346,7 @@ If the binary takes input from a file, mark the location in the binary's command
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -374,7 +374,7 @@ The maximum memory usage in megabytes to allow when processing a test case. Any 
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -394,7 +394,7 @@ The maximum amount of time in milliseconds the target should take to process any
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target
@@ -426,7 +426,7 @@ Supported sanitizers:
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 targets:
     - name: my-target

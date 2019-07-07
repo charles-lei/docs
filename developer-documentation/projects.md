@@ -19,10 +19,10 @@ Click "Create New Project" and follow the instructions to connect your code to F
 
 ## Configure your project
 
-Every project has a `fuzz.yaml` in its root directory, that defines how to set up and fuzz the project. The first part of the file, described here, contains configuration for your entire project. A sample `fuzz.yaml` is provided below:
+Every project has a `fuzzbuzz.yaml` in its root directory, that defines how to set up and fuzz the project. The first part of the file, described here, contains configuration for your entire project. A sample `fuzzbuzz.yaml` is provided below:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 base: ubuntu:16.04
 environment:
@@ -43,5 +43,5 @@ The `base` field specifies which operating system to use when running your code.
 
 The `environment` field contains environment variables to be used for the whole project, and `setup` should be used to install dependencies needed for the entire project, such as build tools. The `language` and `version` fields can be specified at the root of the file, or for each target specifically. Finally, `targets` contains configuration for each of the project's fuzz targets. 
 
-For a more detailed description of how to write your `fuzz.yaml` take a look at our [Configuration Documentation](../reference/configuration.md).
+For a more detailed description of how to write your `fuzzbuzz.yaml` take a look at our [Configuration Documentation](../reference/configuration.md).
 

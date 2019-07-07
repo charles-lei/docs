@@ -13,7 +13,7 @@ This page describes how to write new targets for Fuzzbuzz. If you have existing 
 Each target consists of two parts:
 
 1. a method within your code, that Fuzzbuzz provides test data to - similar to a unit testing framework
-2. an entry in the `targets` list of the project's `fuzz.yaml`, which describes how to run the target, and defines the type of errors to look for
+2. an entry in the `targets` list of the project's `fuzzbuzz.yaml`, which describes how to run the target, and defines the type of errors to look for
 
 ## Test Method
 
@@ -104,13 +104,13 @@ This method should take the test case defined in the array `Data` and convert it
 ## Configuration
 
 {% hint style="info" %}
-This section provides a descriptive overview of `fuzz.yaml` configuration. For full, detailed documentation check out the [Configuration Reference](../reference/configuration.md).
+This section provides a descriptive overview of `fuzzbuzz.yaml` configuration. For full, detailed documentation check out the [Configuration Reference](../reference/configuration.md).
 {% endhint %}
 
-Every target needs an entry in the `targets` list of the project's `fuzz.yaml`:
+Every target needs an entry in the `targets` list of the project's `fuzzbuzz.yaml`:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 language: c
@@ -156,7 +156,7 @@ Even for code written in C, remember to link with `FUZZ_ENGINE` using the C++ co
 This is an example of all the above steps combined to fully configure a target written in C:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 language: c
@@ -195,7 +195,7 @@ $FUZZ_CXX $CXXFLAGS my_target.o $FUZZ_ENGINE -o ./target
 This is an example of all the above steps combined to fully configure a target written in C++:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 language: c++
@@ -218,12 +218,12 @@ targets:
 {% endtab %}
 
 {% tab title="Go" %}
-To fuzz Go code, use the `setup` steps to install all the needed dependencies. Use the `checkout` field to specify where in the Gopath your code should be placed. This can be set at the root of the `fuzz.yaml` and then overridden for a specific target if needed. Then, specify the package and method to fuzz in the `harness` field.
+To fuzz Go code, use the `setup` steps to install all the needed dependencies. Use the `checkout` field to specify where in the Gopath your code should be placed. This can be set at the root of the `fuzzbuzz.yaml` and then overridden for a specific target if needed. Then, specify the package and method to fuzz in the `harness` field.
 
 This is an example of the configuration of a target written in Go:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 language: go
@@ -258,7 +258,7 @@ To fuzz Python code, use the `setup` steps to install all the needed dependencie
 This is an example of the configuration of a target written in Go:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 language: python
@@ -289,7 +289,7 @@ These compilers ensure that Fuzzbuzz gets the feedback it needs to provide infor
 Then, in the `harness` field, specify whether the binary takes input via `stdin`, a network `socket`, or from a `file`. If the binary takes input from a file, mark the location in the binary's command line where the input file should be placed with a `@@`. This will be replaced automatically when fuzzing.
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 targets:
@@ -329,7 +329,7 @@ You can specify a memory limit \(in Megabytes\) in your target configuration, an
 **Usage:**
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 targets:
@@ -346,7 +346,7 @@ You can specify a timeout \(in milliseconds\) in your target configuration, and 
 #### **Usage:**
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 targets:
@@ -365,7 +365,7 @@ Currently Fuzzbuzz supports [Address Sanitizer](https://github.com/google/saniti
 #### Usage:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 # ---- base, global setup, and global environment omitted
 targets:

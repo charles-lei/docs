@@ -17,7 +17,7 @@ git clone https://github.com/fuzzbuzz/tutorial-go.git
 
 ## Step 2: Code Review
 
-The repository contains a `fuzz.yaml` file, which is how Fuzzbuzz is configured, along with a couple of Go files, and a directory named `corpus`. This section will quickly walk you through all of these files.
+The repository contains a `fuzzbuzz.yaml` file, which is how Fuzzbuzz is configured, along with a couple of Go files, and a directory named `corpus`. This section will quickly walk you through all of these files.
 
 ### method.go
 
@@ -65,12 +65,12 @@ func FuzzerEntrypoint(Data []byte) int {
 
 This directory contains some initial tests \(the "test corpus"\) that can be provided as input to FuzzerEntrypoint, and don't cause it to fail. These initial cases give Fuzzbuzz an idea of what a valid test case looks like, which allows it to more efficiently learn how to generate interesting new tests.
 
-### fuzz.yaml
+### fuzzbuzz.yaml
 
 This is how you provide your configuration to Fuzzbuzz. It allows you to install any dependencies, tells Fuzzbuzz what parts of your code to test, and allows you to configure more advanced constraints to make your code more efficient.
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 base: ubuntu:16.04
 targets:
@@ -90,7 +90,7 @@ targets:
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This `fuzz.yaml` is very basic. It defines the base operating system to build and fuzz code in, and has configuration for a target named `tutorial`. Every target has a corresponding method or binary that it represents.
+This `fuzzbuzz.yaml` is very basic. It defines the base operating system to build and fuzz code in, and has configuration for a target named `tutorial`. Every target has a corresponding method or binary that it represents.
 
 The target configuration defines the language and version to use, as well as the method to test, where to find and import it, and the initial test corpus. You can learn more about other configuration options by reading the [Target Documentation ](../../developer-documentation/targets.md)page.
 

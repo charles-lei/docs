@@ -13,7 +13,7 @@ Then, in the harness field, specify whether the binary takes input via stdin, or
 AFL configuration options like memory limit, timeout threshold and dictionary can also be set in the configuration file. This is an example of a configuration file with all the features described above:
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 language: c++
 targets:

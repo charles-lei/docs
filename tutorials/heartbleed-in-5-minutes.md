@@ -18,7 +18,7 @@ git clone https://github.com/fuzzbuzz/heartbleed-tutorial.git
 
 ## Step 2: Code Review
 
-The repository contains a `fuzz.yaml` file, which is how Fuzzbuzz is configured, along with a  C++ file, the OpenSSL source, and a `build.sh` file. This section will quickly walk you through all of these files.
+The repository contains a `fuzzbuzz.yaml` file, which is how Fuzzbuzz is configured, along with a  C++ file, the OpenSSL source, and a `build.sh` file. This section will quickly walk you through all of these files.
 
 ### target.cc
 
@@ -89,12 +89,12 @@ $FUZZ_CXX $CXXFLAGS ./target.cc -DCERT_PATH=\"$PWD/runtime\"  openssl_src/libssl
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### fuzz.yaml
+### fuzzbuzz.yaml
 
 This is how you provide your configuration to Fuzzbuzz. It allows you to install any dependencies, tells Fuzzbuzz what parts of your code to test, and allows you to configure more advanced constraints to make your code more efficient.
 
 {% code-tabs %}
-{% code-tabs-item title="fuzz.yaml" %}
+{% code-tabs-item title="fuzzbuzz.yaml" %}
 ```yaml
 base: ubuntu:16.04
 language: c++
@@ -112,7 +112,7 @@ targets:
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This `fuzz.yaml` is very basic. It defines the base operating system to build and fuzz code in, and has configuration for a target named `heartbleed`. Every target has a corresponding method or binary that it represents.
+This `fuzzbuzz.yaml` is very basic. It defines the base operating system to build and fuzz code in, and has configuration for a target named `heartbleed`. Every target has a corresponding method or binary that it represents.
 
 The target configuration defines the language and version to use, as well as the method to test, where to find and import it, and the initial test corpus. You can learn more about other configuration options by reading the [Target Documentation ](../developer-documentation/targets.md)page.
 
@@ -130,7 +130,7 @@ To make sure everything is working, run this command from the tutorial directory
 fuzzbuzz validate
 ```
 
-You should see that Fuzzbuzz reads the fuzz.yaml and detects the one target we have, called "heartbleed". Finally, you can run:
+You should see that Fuzzbuzz reads the fuzzbuzz.yaml and detects the one target we have, called "heartbleed". Finally, you can run:
 
 ```text
 fuzzbuzz project create
