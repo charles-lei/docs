@@ -5,7 +5,7 @@
 {% tabs %}
 {% tab title="macOS" %}
 ```text
-curl -o https://app.fuzzbuzz.io/releases/cli/latest/osx/fuzzbuzz
+curl -O https://app.fuzzbuzz.io/releases/cli/latest/osx/fuzzbuzz
 ```
 {% endtab %}
 

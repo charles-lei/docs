@@ -31,11 +31,11 @@ package tutorial
 // BrokenMethod has a bug - it will try to read the 4th
 // index of Data even when it only has a length of 3.
 func BrokenMethod(Data string) bool {
-	return len(Data) >= 3 &&
-		Data[0] == 'F' &&
-		Data[1] == 'U' &&
-		Data[2] == 'Z' &&
-		Data[3] == 'Z'
+    return len(Data) >= 3 &&
+        Data[0] == 'F' &&
+        Data[1] == 'U' &&
+        Data[2] == 'Z' &&
+        Data[3] == 'Z'
 }
 ```
 {% endcode-tabs-item %}
@@ -53,9 +53,9 @@ package tutorial
 // FuzzerEntrypoint is the method Fuzzbuzz will repeatedly
 // run with new tests to try and find bugs in BrokenMethod
 func FuzzerEntrypoint(Data []byte) int {
-	testData := string(Data)
-	BrokenMethod(testData)
-	return 0
+    testData := string(Data)
+    BrokenMethod(testData)
+    return 0
 }
 ```
 {% endcode-tabs-item %}
@@ -85,7 +85,6 @@ targets:
       # the repository will be cloned to
       # $GOPATH/src/github.com/fuzzbuzz/tutorial
       checkout: github.com/fuzzbuzz/tutorial
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

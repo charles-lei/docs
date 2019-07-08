@@ -43,7 +43,6 @@ To fuzz code written in C++, create a new file with the following method:
 {% code-tabs %}
 {% code-tabs-item title="target.cpp" %}
 ```cpp
-
 extern "C" int FuzzerEntrypoint(const uint8_t *Data, size_t Size) {
   // Step 1: read Data into desired format
   // Step 2: run your methods/code with the test data
@@ -122,12 +121,11 @@ targets:
         - make my-target
       corpus: my-target/corpus # a directory containing initial test cases
       harness: # special language-specific configuration
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-The `name` field is compulsory, and the `setup` steps should be used to install needed dependencies. For languages like C and C++, the `setup` steps should also be used to compile the target binaries. 
+The `name` field is compulsory, and the `setup` steps should be used to install needed dependencies. For languages like C and C++, the `setup` steps should also be used to compile the target binaries.
 
 The `corpus` directory should contain a list of files, each with an input to the Test Method that does not produce in a bug. This field is optional, but examples of tests that pass gives Fuzzbuzz an idea of what a good input looks like, and can make finding new code paths more efficient.
 
@@ -135,7 +133,7 @@ Finally, the `harness` field tells Fuzzbuzz how to run the Test Method. This ent
 
 {% tabs %}
 {% tab title="C" %}
-To fuzz C code, compile the file containing `FuzzerEntrypoint` along with all other required files and libraries, using the `FUZZ_CC` and `CFLAGS` environment variables. 
+To fuzz C code, compile the file containing `FuzzerEntrypoint` along with all other required files and libraries, using the `FUZZ_CC` and `CFLAGS` environment variables.
 
 For example, if `FuzzerEntrypoint` is implemented in `my_target.c` and calls a method in `my_api.h`:
 
@@ -178,7 +176,7 @@ targets:
 {% endtab %}
 
 {% tab title="C++" %}
-To fuzz C++ code, compile the file containing `FuzzerEntrypoint` along with all other required files and libraries, using the `FUZZ_CXX` and `CXXFLAGS` environment variables. 
+To fuzz C++ code, compile the file containing `FuzzerEntrypoint` along with all other required files and libraries, using the `FUZZ_CXX` and `CXXFLAGS` environment variables.
 
 For example, if `FuzzerEntrypoint` is implemented in `my_target.cpp` and calls a method in `my_api.h`:
 
@@ -211,7 +209,6 @@ targets:
       corpus: ./my_target/corpus
       harness:
         binary: ./target
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -246,7 +243,6 @@ targets:
         # package specifies the package to import the
         # desired function from 
         package: github.com/x/y/z/a/b/c
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -272,7 +268,6 @@ targets:
         # be named FuzzerEntrypoint
         function: FuzzerEntrypoint
         file: tests/fuzz_test_file.py
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -373,7 +368,6 @@ targets:
     sanitizers:
         # you can specify custom sanitizer options here
         address: detect_stack_use_after_return=1:debug=1 # can be left blank
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

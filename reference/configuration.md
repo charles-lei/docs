@@ -339,7 +339,7 @@ targets:
 {% endtab %}
 
 {% tab title="Binaries" %}
-Harness specifies the location of the final compiled binary, as well as how the binary receives input. 
+Harness specifies the location of the final compiled binary, as well as how the binary receives input.
 
 If the binary takes input from a file, mark the location in the binary's command line where the input file should be placed with a `@@`. This will be replaced automatically when fuzzing.
 
@@ -434,7 +434,7 @@ targets:
         # sanitizer options can be specified as a string
         address: detect_stack_use_after_return=1:debug=1
         # the field can also be left blank, e.g.:
-        address: 
+        address:
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

@@ -9,7 +9,7 @@ description: >-
 
 ## Connect your project
 
-Every project is connected to Fuzzbuzz either through a service like GitHub, which uses webhooks to automatically update the code on the platform, or via a manual update system, such as uploading a new Zip File whenever new code should be tested. 
+Every project is connected to Fuzzbuzz either through a service like GitHub, which uses webhooks to automatically update the code on the platform, or via a manual update system, such as uploading a new Zip File whenever new code should be tested.
 
 After logging into the dashboard for the first time, you will see the following screen:
 
@@ -41,7 +41,7 @@ targets:
 
 The `base` field specifies which operating system to use when running your code. As of now, the only option is `ubuntu:16.04` which specifies a basic Docker container with an Ubuntu image.
 
-The `environment` field contains environment variables to be used for the whole project, and `setup` should be used to install dependencies needed for the entire project, such as build tools. The `language` and `version` fields can be specified at the root of the file, or for each target specifically. Finally, `targets` contains configuration for each of the project's fuzz targets. 
+The `environment` field contains environment variables to be used for the whole project, and `setup` should be used to install dependencies needed for the entire project, such as build tools. The `language` and `version` fields can be specified at the root of the file, or for each target specifically. Finally, `targets` contains configuration for each of the project's fuzz targets.
 
 For a more detailed description of how to write your `fuzzbuzz.yaml` take a look at our [Configuration Documentation](../reference/configuration.md).
 

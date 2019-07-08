@@ -36,5 +36,3 @@ Shortly after the target has fuzzing, stats like the number of tests per second 
 
 ![Build logs and details](../.gitbook/assets/screen-shot-2019-02-14-at-1.14.18-pm.png)
 
-
-

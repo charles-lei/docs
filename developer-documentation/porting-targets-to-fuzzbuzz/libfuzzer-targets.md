@@ -28,7 +28,7 @@ Fuzzbuzz also supports the `LLVMFuzzerInitialize` method, and will call it befor
 {% endtab %}
 {% endtabs %}
 
-To compile your target, replace calls to clang with `FUZZ_CC` and `FUZZ_CXX`, and use the flags in `CFLAGS` and `CXXFLAGS`.  You can append your own flags, but be sure to include the Fuzzbuzz-provided ones. These help us build special versions of your target to track metrics like code coverage. 
+To compile your target, replace calls to clang with `FUZZ_CC` and `FUZZ_CXX`, and use the flags in `CFLAGS` and `CXXFLAGS`. You can append your own flags, but be sure to include the Fuzzbuzz-provided ones. These help us build special versions of your target to track metrics like code coverage.
 
 Rather than linking with Libfuzzer using `-fsanitize=fuzzer` or similar methods, simply link the file containing `FuzzerEntrypoint` and all other required files with `$FUZZ_ENGINE`.
 
@@ -60,7 +60,6 @@ targets:
         binary: ./target @@
         # input can be one of: stdin, file, socket
         input: file
-
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

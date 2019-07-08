@@ -20,7 +20,7 @@ fuzzbuzz validate
 You should see that Fuzzbuzz reads the fuzzbuzz.yaml and detects the one target we have, called "tutorial". To make sure that all of the setup steps work, we can run:
 
 ```text
-fuzzbuzz target build tutorial-python3    
+fuzzbuzz target build tutorial-python3
 ```
 
 This will run the target's setup steps in a local Docker container, using the same environment it would on the Fuzzbuzz platform, so you can make sure everything's set up right. Finally, you can run:
@@ -33,10 +33,9 @@ Choose Zip File, give your project a Name and Description, and then wait as the 
 
 ![After creating your project, your dashboard should look something like this.](../../.gitbook/assets/screen-shot-2019-02-13-at-5.21.46-pm.png)
 
-## Step 6: Fuzz your code! <a id="step-6-fuzz-your-code"></a>
+## Step 6: Fuzz your code!  <a id="step-6-fuzz-your-code"></a>
 
-Give a target 1 CPU to fuzz on, and press "Save Changes".  
-
+Give a target 1 CPU to fuzz on, and press "Save Changes".
 
 ![](../../.gitbook/assets/screen-shot-2019-02-13-at-5.17.14-pm.png)
 

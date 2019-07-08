@@ -18,7 +18,7 @@ git clone https://github.com/fuzzbuzz/heartbleed-tutorial.git
 
 ## Step 2: Code Review
 
-The repository contains a `fuzzbuzz.yaml` file, which is how Fuzzbuzz is configured, along with a  C++ file, the OpenSSL source, and a `build.sh` file. This section will quickly walk you through all of these files.
+The repository contains a `fuzzbuzz.yaml` file, which is how Fuzzbuzz is configured, along with a C++ file, the OpenSSL source, and a `build.sh` file. This section will quickly walk you through all of these files.
 
 ### target.cc
 
